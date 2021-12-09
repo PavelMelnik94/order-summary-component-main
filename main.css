@@ -1,0 +1,175 @@
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --fsize: 16px;
+  --ff: "Red Hat Display", sans-serif;
+}
+
+body {
+  font-size: var(--fsize);
+  font-family: var(--ff);
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url(./images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-color: var(--pale-blue);
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  max-width: 320px;
+  min-height: 320px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  border: 0;
+  background-color: whitesmoke;
+  box-shadow: 0px 14px 31px -14px var(--desaturated-blue);
+}
+
+.card__img img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card__header {
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--dark-blue);
+}
+
+.card__body-text {
+  color: var(--desaturated-blue);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.card__body-list {
+  background-color: rgb(237, 238, 248);
+  border-radius: 5px;
+  min-height: 65px;
+}
+
+.card__body-list-item {
+  padding: 5px;
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+}
+
+.card__body-list-item--img {
+  background-color: rgb(222, 228, 251);
+  border-radius: 100%;
+  max-width: 40px;
+  height: 40px;
+  align-items: center;
+}
+
+.card__body-list-item--img img {
+  width: 100%;
+  height: auto;
+}
+
+.card__body-list-item-content {
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__body-list-item-content--name {
+  font-weight: 900;
+  color: var(--dark-blue);
+  font-size: 14px;
+}
+
+.card__body-list-item-content--price {
+  color: var(--desaturated-blue);
+  font-size: 14px;
+}
+
+.card__body-list-item-content--link {
+  color: var(--dark-blue);
+  font-size: 12px;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.btn {
+  background-color: var(--bright-blue);
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 14px 31px -14px var(--desaturated-blue);
+}
+
+.btn:hover {
+  background-color: rgb(89, 75, 246);
+  box-shadow: 0px 14px 31px -14px var(--desaturated-blue);
+}
+
+/* .cancel-link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} */
+.cancel-link a {
+  color: var(--desaturated-blue);
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.attribution {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 400px) {
+  .card__header {
+    font-size: 0.9rem;
+  }
+  .card__body-text {
+    font-size: 12px;
+  }
+  .card__body-list {
+    min-height: 45px;
+  }
+
+  .card__body-list-item {
+    min-height: 45px;
+  }
+  .card__body-list-item--img {
+    align-items: center;
+  }
+  .card-holder {
+    align-items: center;
+  }
+  .card__body-list-item-content {
+    justify-content: space-around;
+  }
+  .card__body-list-item-content--price,
+  .card__body-list-item-content--name {
+    font-size: 12px;
+  }
+  .card__body-list-item-content--link {
+    font-size: 10px;
+  }
+}
